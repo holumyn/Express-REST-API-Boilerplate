@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "description": "SwaggerHub API Auto Mocking",
+      "url": "https://your-domain.com/api/v1/"
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Express REST API Boilerplate",
+    "description": "This is API spec for Express REST API Boilerplate v1.0.0"
+  },
+  "security": [
+    {
+      "implicit": [
+        "read",
+        "write"
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "User",
+      "description": "user related endpoint"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create user account",
+        "description": "Create user account",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get user info",
+        "description": "Get user info",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "implicit": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://example.com/oauth/auth",
+            "scopes": {
+              "write": "allows modifying resources",
+              "read": "allows reading resources"
+            }
+          }
+        }
+      }
+    }
+  }
+}
