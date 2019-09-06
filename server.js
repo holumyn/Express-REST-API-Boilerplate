@@ -29,7 +29,7 @@ app.use(cors());
 
 app.use(formidableMiddleware({
   encoding: 'utf-8',
-  uploadDir: './public/images/topic/',
+  uploadDir: './public/images/',
   keepExtensions: true,
 }));
 

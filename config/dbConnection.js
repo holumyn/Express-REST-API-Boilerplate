@@ -19,7 +19,7 @@ async function dbConnectionInitialize() {
     dbUser = process.env.DB_USER;
     dbPass = process.env.DB_PASS;
     dbHost = process.env.DB_HOST;
-    dbPort = process.env.DB_PORT || 63694;
+    dbPort = process.env.DB_PORT || 19078;
     dbName = process.env.DB_NAME;
   }
 
@@ -31,7 +31,7 @@ async function dbConnectionInitialize() {
 
   const dbHostPortName = `${dbHost}:${dbPort}/${dbName}`;
 
-  // Use this for SSL connection i.e Production
+  // Use this for SSL connection - Like UAT/PROD
   //const dbConnection = `mongodb://${dbUser}:${dbPass}@${dbHostPortName}?ssl=true`;
 
   // Use this for non SSL connection - Like test/dev
@@ -63,8 +63,8 @@ async function dbConnectionInitialize() {
 
 
   /**
-    * Taking care of DB connections.
-  */
+       * Taking care of DB connections.
+       */
   process.once('SIGUSR2', () => {
     gracefulShutdown('nodemon restart', () => {
       process.kill(process.pid, 'SIGUSR2');
@@ -96,6 +96,11 @@ async function dbConnectionInitialize() {
       logger.error(`Unable to connect to the mongoDB server. Error: ${err.message}`);
     } else {
       logger.debug(`Connection established to ${dbHostPortName}`);
+      /*
+          mongoose.connection.close(function() {
+            console.log('DB disconnected');
+          })
+          */
     }
   });
   module.exports = mongoose;
