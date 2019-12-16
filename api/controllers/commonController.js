@@ -1,7 +1,7 @@
 const appRoot = require('app-root-path');
 const logger = require(`${appRoot}/config/winston`);
 const constants = require(`${appRoot}/api/constants/constants`);
-
+const User = require(`${appRoot}/api/models/userModel`);
 const passport = require('passport');
 
 /*
