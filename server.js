@@ -6,7 +6,7 @@ if (dotenv.error) {
 var express = require('express'),
   app = express(),
   
-  port = process.env.PORT || 9002;
+  port = process.env.PORT || 3000;
 
 const router = express.Router();
 const appRoot = require('app-root-path');
