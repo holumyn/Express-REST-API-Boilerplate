@@ -32,7 +32,7 @@
     "express-formidable": "^1.2.0",
     "fs": "0.0.1-security",
     "handlebar": "^1.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nodemailer": "^6.3.0",
     "mongoose": "^5.7.5",
     "nodemon": "^1.19.1",
